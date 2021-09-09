@@ -1,7 +1,7 @@
 /*==========  Desktop First  ========== */
 @media only screen and (max-width: 1200px) {
   .header__content {
-    height: calc(100vh - 121px);
+    height: calc(100vh - 116px);
   }
 
   .skills__list {
@@ -27,8 +27,9 @@
   .header__text {
     font-size: 74px;
   }
+
   .menu__link {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .skills__list {
@@ -51,13 +52,34 @@
     padding: 20px 0;
     width: 220px;
   }
+
+  /* Услуги */
+  .services__inner {
+    flex-direction: column;
+  }
+
+  .services__item {
+    padding-top: 60px;
+  }
+
+  .services__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .services__item::before {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+
   .title {
     display: block;
-    text-align: center;
     font-size: 36px;
     margin: 0 auto;
   }
@@ -67,7 +89,7 @@
     bottom: 4px;
   }
 
-  .title--margin {
+  .title-margin {
     margin-bottom: 30px;
   }
 
@@ -79,12 +101,8 @@
     padding-top: 15px;
   }
 
-  .header__top {
-    align-items: flex-start;
-  }
-
   .header__content {
-    height: calc(100vh - 72px);
+    height: calc(100vh - 68px);
   }
 
   .logo {
@@ -100,6 +118,7 @@
     z-index: 1;
     height: 100vh;
     text-align: center;
+    padding: 90px 0;
     background-color: #7792e0;
     transform: translateY(-200%);
     transition: transform 0.3s;
@@ -107,11 +126,6 @@
 
   .menu__list.menu__list--active {
     transform: translateY(0%);
-    position: fixed;
-  }
-
-  ul.menu__list {
-    padding: 90px 0;
   }
 
   .menu__item:not(:last-child) {
@@ -122,58 +136,7 @@
 
   .menu__btn {
     display: block;
-    z-index: 2;
-    width: 40px;
-    height: 20px;
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
   }
-  /* Я шатал как его сделать то?! */
-  .menu__btn:active {
-    background-color: #829ce6;
-    padding: 24px 14px;
-    border-radius: 3px;
-  }
-  /*  */
-  .menu__btn span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #fff;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
-  .menu__btn span:nth-child(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-  .menu__btn span:nth-child(2) {
-    top: 12px;
-    transform-origin: left center;
-  }
-  .menu__btn span:nth-child(3) {
-    top: 24px;
-    transform-origin: left center;
-  }
-  .menu__btn.open span:nth-child(1) {
-    transform: rotate(45deg);
-    top: -1px;
-    left: 8px;
-  }
-  .menu__btn.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-  }
-  .menu__btn.open span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 27px;
-    left: 8px;
-  }
-  /* </Бургер> */
 
   .menu__link {
     display: block;
@@ -199,7 +162,6 @@
 
   .skills__img {
     margin: 0 0 30px;
-    max-width: 400px;
   }
 
   .skills__list {
@@ -222,9 +184,6 @@
   }
 
   /* Услуги */
-  .services__inner {
-    justify-content: space-around;
-  }
 
   .services__item {
     text-align: center;
@@ -319,7 +278,7 @@
   }
 
   .form {
-    width: 531px;
+    width: 100%;
   }
 
   .form__wrapper {
@@ -335,16 +294,13 @@
     max-width: 531px;
   }
 
-  .footer{
+  .footer {
     padding: 32px 0;
   }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .header__content {
-    height: calc(100vh - 55px);
-  }
   .title {
     font-size: 28px;
   }
@@ -355,11 +311,6 @@
 
   .header__text {
     font-size: 46px;
-  }
-
-  .logo svg {
-    width: 110px;
-    height: 36px;
   }
 
   .header__link {
@@ -377,30 +328,6 @@
   }
 
   /* Услгуи */
-
-  .menu__btn {
-    width: 30px;
-  }
-
-  .menu__btn span {
-    height: 3px;
-  }
-
-  .menu__btn span:nth-child(2) {
-    top: 12px;
-  }
-
-  .menu__btn span:nth-child(3) {
-    top: 24px;
-  }
-
-  .menu__btn.open span:nth-child(3) {
-    top: 20px;
-  }
-
-  .services__inner {
-    flex-direction: column;
-  }
 
   .services__item {
     text-align: left;
@@ -493,25 +420,14 @@
   }
 
   /* Контакты */
-  .form {
-    max-width: 432px;
-  }
 
   .form__label:not(:last-child) {
     margin: 0 0 15px 0;
-  }
-
-  .form__field {
-    max-width: 432px;
   }
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 375px) {
-  .header__title {
-    font-size: 19px;
-  }
-
   .header__text {
     font-size: 40px;
   }
@@ -531,12 +447,5 @@
     max-height: 170px;
     padding: 25px 5px;
     margin: 0;
-  }
-  /* Контакты */
-  .form {
-    max-width: 344px;
-  }
-  .form__field {
-    max-width: 345px;
   }
 }
