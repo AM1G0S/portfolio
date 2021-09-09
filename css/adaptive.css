@@ -251,10 +251,11 @@
   .results__list {
     flex-wrap: wrap;
     justify-content: center;
+    column-gap: 15px;
   }
 
   .results__item {
-    margin: 0 14px 14px 0;
+    margin-bottom: 15px;
   }
 
   .results__text {
@@ -320,6 +321,11 @@
   .header__link::before {
     width: 37px;
     height: 21px;
+  }
+
+  .logo__img {
+    width: 110px;
+    height: 36px;
   }
 
   /* Обо мне */
