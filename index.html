@@ -301,7 +301,7 @@
             </ul>
           </address>
 
-          <form class="form">
+          <form class="form" action="telegram.php" method="POST">
             <div class="form__wrapper">
               <label class="form__label">
                 Ваше имя
@@ -319,7 +319,7 @@
               <textarea class="form__field form__field--textarea" placeholder="Текст вашего сообщения" maxlength="900"
                 name="message" required></textarea>
             </label>
-
+            <input class="form__file" type="file" name="file" />
             <button class="button" type="submit">Отправить</button>
 
           </form>

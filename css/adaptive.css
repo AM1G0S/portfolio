@@ -444,4 +444,9 @@
     max-height: 170px;
     padding: 25px 5px;
   }
+  
+  /* ФОрма */
+  .form__file {
+    margin-bottom: 20px;
+  }
 }
