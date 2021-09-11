@@ -5,12 +5,16 @@
   }
 
   .skills__list {
-    max-width: 450px;
+    max-width: calc(100% - 58%);
   }
 
   .results__item {
-    padding: 30px 0;
-    width: 250px;
+    padding: 120px 0 25px;
+    width: 235px;
+  }
+
+  .results__item::before {
+    top: 30px;
   }
 
   .portfolio__content {
@@ -20,15 +24,22 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
+  .title {
+    display: block;
+    font-size: 36px;
+    margin: 0 auto 30px;
+  }
+
   .header__title {
     max-width: 828px;
     font-size: 38px;
   }
+
   .header__text {
     font-size: 74px;
   }
 
-  .menu__link {
+  .menu {
     font-size: 16px;
   }
 
@@ -48,110 +59,28 @@
     height: 30px;
   }
 
+  /* Результаты */
+
+  .results__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  .results__list {
+    max-width: 680px;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 15px;
+  }
+
   .results__item {
-    padding: 20px 0;
-    width: 220px;
+    margin-bottom: 15px;
+    padding: 120px 0 25px;
+    width: 254px;
   }
 
-  /* Услуги */
-  .services__inner {
-    flex-direction: column;
-  }
-
-  .services__item {
-    padding-top: 60px;
-  }
-
-  .services__item:not(:last-child) {
-    margin-bottom: 40px;
-  }
-
-  .services__item::before {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  .section-padding {
-    padding: 50px 0;
-  }
-
-  .title {
-    display: block;
-    font-size: 36px;
-    margin: 0 auto;
-  }
-
-  .title::before {
-    height: 10px;
-    bottom: 4px;
-  }
-
-  .title-margin {
-    margin-bottom: 30px;
-  }
-
-  .padding-section {
-    padding: 50px 0;
-  }
-
-  .header {
-    padding-top: 15px;
-  }
-
-  .header__content {
-    height: calc(100vh - 59px);
-  }
-
-  .logo {
-    z-index: 2;
-  }
-
-  .menu__list {
-    position: absolute;
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    height: 100vh;
-    text-align: center;
-    padding: 90px 0;
-    background-color: #7792e0;
-    transform: translateY(-200%);
-    transition: transform 0.3s;
-  }
-
-  .menu__list.menu__list--active {
-    transform: translateY(0%);
-  }
-
-  .menu__item:not(:last-child) {
-    margin-right: 0;
-  }
-
-  /* Бургер */
-
-  .menu__btn {
-    display: block;
-  }
-
-  .menu__link {
-    display: block;
-    padding: 22px 0;
-    font-size: 18px;
-    border-bottom: none;
-  }
-
-  .menu__link:focus {
-    background-color: rgba(35, 82, 222, 0.7);
-    box-shadow: none;
-  }
-
-  .menu__link:hover {
-    border-bottom: none;
+  .results__text {
+    font-size: 20px;
   }
 
   /* Навыки */
@@ -184,6 +113,107 @@
   }
 
   /* Услуги */
+  .services__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services__item {
+    padding-top: 60px;
+  }
+
+  .services__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .services__item::before {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 798px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .title::before {
+    height: 10px;
+    bottom: 4px;
+  }
+
+  .padding-section {
+    padding: 50px 0;
+  }
+
+  .header {
+    padding-top: 15px;
+  }
+
+  .header__content {
+    height: calc(100vh - 68px);
+  }
+
+  .header__title {
+    font-size: 28px;
+  }
+
+  .header__text {
+    font-size: 58px;
+  }
+
+  .logo {
+    z-index: 2;
+  }
+
+  .menu {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: scroll;
+    height: 100vh;
+    text-align: center;
+    padding: 90px 0;
+    background-color: #7792e0;
+    transform: translateY(-200%);
+    transition: transform 0.3s;
+  }
+
+  .menu.menu--active {
+    transform: translateY(0%);
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  /* Бургер */
+
+  .burger {
+    display: block;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 22px 0;
+    font-size: 18px;
+    border-bottom: none;
+  }
+
+  .menu__link:focus {
+    background-color: rgba(35, 82, 222, 0.7);
+    box-shadow: none;
+  }
+
+  .menu__link:hover {
+    border-bottom: none;
+  }
+
+  /* Услуги */
 
   .services__item {
     text-align: center;
@@ -207,6 +237,14 @@
   }
 
   /* Мои работы */
+  .portfolio__list {
+    flex-direction: column;
+  }
+
+  .portfolio__item:not(:last-child) {
+    margin: 0 0 15px;
+  }
+
   .portfolio__btn {
     font-size: 22px;
   }
@@ -248,23 +286,8 @@
 
   /* Результаты */
 
-  .results__list {
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 15px;
-  }
-
-  .results__item {
-    margin-bottom: 15px;
-  }
-
-  .results__text {
-    font-size: 20px;
-  }
-
   .results__item::before {
-    height: 35px;
-    width: 42px;
+    width: 80px;
   }
 
   /* Контакты */
@@ -301,9 +324,13 @@
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 575px) {
   .title {
     font-size: 28px;
+  }
+
+  .header__content {
+    height: calc(100vh - 59px);
   }
 
   .header__title {
@@ -362,16 +389,11 @@
   }
 
   /* Мои работы */
+  .portfolio {
+    padding-bottom: 50px;
+  }
   .portfolio__top {
     margin-bottom: 30px;
-  }
-
-  .portfolio__list {
-    flex-direction: column;
-  }
-
-  .portfolio__item:not(:last-child) {
-    margin: 0 0 15px;
   }
 
   .portfolio__box {
@@ -395,15 +417,13 @@
   }
   /* Результаты */
   .results__item {
-    max-width: 175px;
-    max-height: 175px;
-    padding: 40px 5px;
+    padding: 110px 0 25px;
+    width: 208px;
   }
 
-  .results__img {
-    max-height: 35px;
-    max-width: 42px;
-    margin-bottom: 9px;
+  .results__item::before{
+    top: 20px;
+    width: 70px;
   }
 
   .results__text {
@@ -413,10 +433,13 @@
   }
 
   .results__number {
-    font-size: 30px;
+    font-size: 36px;
   }
 
   /* Контакты */
+  .contacts {
+    padding-bottom: 50px;
+  }
 
   .form__label:not(:last-child) {
     margin: 0 0 15px 0;
@@ -424,15 +447,9 @@
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 480px) {
   .header__text {
     font-size: 40px;
-  }
-
-  /* Навыки */
-
-  .skills__img {
-    max-width: 300px;
   }
 
   .skills__list {
@@ -440,13 +457,23 @@
   }
   /* Результаты */
   .results__item {
-    max-width: 165px;
-    max-height: 170px;
-    padding: 25px 5px;
+    width: 165px;
+    padding: 68px 0px 25px;
+  } 
+
+  .results__item::before{
+    top: 20px;
+    width: 42px;
+    height: 35px;
   }
-  
-  /* ФОрма */
-  .form__file {
-    margin-bottom: 20px;
+
+  .results__text{
+    max-width: 135px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .results__number{
+    font-size: 30px;
   }
 }

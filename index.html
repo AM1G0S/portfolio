@@ -19,36 +19,35 @@
 <body>
   <header class="header" style="background-image: url(images/bg.jpg)">
     <div class="container">
-      <nav class="menu">
+      <nav class="header__top">
 
-        <a class="logo" href="##">
-          <img class="logo__img" src="images/logo.svg" alt="логотип" "width= " 159" height="53">
-          <span class="sr-only">Логотип</span>
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.svg" alt="логотип" width="159" height="53">
         </a>
 
-        <button class="menu__btn" type="button">
-          <span class="menu__btn-line"></span>
+        <button class="burger" type="button">
+          <span class="burger__line"></span>
           <span class="sr-only">открыть меню</span>
         </button>
 
-        <ul class="menu__list">
+        <ul class="menu">
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Обо мне</a>
+            <a class="menu__link animation" href="#about">Обо мне</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Навыки</a>
+            <a class="menu__link animation" href="#skills">Навыки</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Услуги</a>
+            <a class="menu__link animation" href="#services">Услуги</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Портфолио</a>
+            <a class="menu__link animation" href="#portfolio">Портфолио</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Отзывы</a>
+            <a class="menu__link animation" href="#reviews">Отзывы</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link animation" href="##">Контакты</a>
+            <a class="menu__link animation" href="#contacts">Контакты</a>
           </li>
         </ul>
 
@@ -59,16 +58,15 @@
           Привет, я Дзязиков Сулейман
           <span class="header__text">frontend- разработчик</span>
         </h1>
-        <a class="header__link animation" href="##"><span>cмотреть работы</span></a>
+        <a class="header__link animation" href="#"><span>cмотреть работы</span></a>
       </div>
-    </div>
     </div>
   </header>
 
   <main class="main">
-    <section class="about section-padding">
+    <section class="about section-padding" id="about">
       <div class="container">
-        <h2 class="title title-margin">Обо мне</h2>
+        <h2 class="title">Обо мне</h2>
         <div class="about__text">
           <p>
             Приветствую всех на своём сайте! Меня зовут Иван, я из Киева. Занимаюсь фронтенд-разработкой более года. До
@@ -88,26 +86,27 @@
       </div>
     </section>
 
-    <section class="skills section-padding">
+    <section class="skills section-padding" id="skills">
       <div class="container">
-        <h2 class="title title-margin">Навыки</h2>
+        <h2 class="title">Навыки</h2>
         <div class="skills__inner">
           <img class="skills__img" src="images/portrait.jpg" alt="фотография разработчика" />
+
           <ul class="skills__list">
 
             <li class="skills__item">
               <span class="skills__text">html</span>
-              <span class="skills__progress" style="width: 85%"></span>
+                <span class="skills__progress" style="width: 85%"></span>
             </li>
 
             <li class="skills__item">
               <span class="skills__text">css</span>
-              <span class="skills__progress" style="width: 80%"></span>
+                <span class="skills__progress" style="width: 80%"></span>
             </li>
 
             <li class="skills__item">
               <span class="skills__text">js</span>
-              <span class="skills__progress" style="width: 60%"></span>
+                <span class="skills__progress" style="width: 60%"></span>
             </li>
 
           </ul>
@@ -115,9 +114,9 @@
       </div>
     </section>
 
-    <section class="services section-padding">
+    <section class="services section-padding" id="services">
       <div class="container">
-        <h2 class="title title-margin">Услуги</h2>
+        <h2 class="title">Услуги</h2>
         <ul class="services__inner">
           <li class="services__item services__item--dev">
             <h3 class="services__title">Вёрстка проектов</h3>
@@ -147,10 +146,10 @@
       </div>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <div class="container container--portfolio">
         <div class="portfolio__top">
-          <h2 class="title title-margin">Мои работы</h2>
+          <h2 class="title">Мои работы</h2>
 
           <ul class="portfolio__list">
             <li class="portfolio__item">
@@ -204,9 +203,9 @@
       </div>
     </section>
 
-    <section class="reviews section-padding">
+    <section class="reviews section-padding" id="reviews">
       <div class="container container--reviews">
-        <h2 class="title title-margin">Отзывы клиентов</h2>
+        <h2 class="title">Отзывы клиентов</h2>
         <div class="reviews__inner">
           <div class="reviews__client">
             <img class="reviews__img" src="images/client.jpg" alt="илон маск" width="130" height="130">
@@ -226,41 +225,39 @@
       </div>
     </section>
 
-    <section class="results section-padding">
+    <section class="results section-padding" id="results">
       <div class="container">
-        <ul class="results__list">
+        <div class="results__inner">
+          <ul class="results__list">
 
-          <li class="results__item">
-            <img class="results__img" src="images/works_icon.svg" alt="">
-            <span class="results__text">Выполненных работ</span>
-            <span class="results__number">56</span>
-          </li>
+            <li class="results__item results__item--works">
+              <span class="results__text">Выполненных работ</span>
+              <span class="results__number">56</span>
+            </li>
 
-          <li class="results__item">
-            <img class="results__img" src="images/clients_icon.svg" alt="">
-            <span class="results__text">Довольных клиентов</span>
-            <span class="results__number">23</span>
-          </li>
+            <li class="results__item results__item--clients">
+              <span class="results__text">Довольных клиентов</span>
+              <span class="results__number">23</span>
+            </li>
 
-          <li class="results__item">
-            <img class="results__img" src="images/coffee_icon.svg" alt="">
-            <span class="results__text">Выпито чашек кофе</span>
-            <span class="results__number">477</span>
-          </li>
+            <li class="results__item results__item--coffee">
+              <span class="results__text">Выпито чашек кофе</span>
+              <span class="results__number">477</span>
+            </li>
 
-          <li class="results__item">
-            <img class="results__img" src="images/review_icon.svg" alt="">
-            <span class="results__text">Всего отзывов</span>
-            <span class="results__number">48</span>
-          </li>
+            <li class="results__item results__item--review">
+              <span class="results__text">Всего отзывов</span>
+              <span class="results__number">48</span>
+            </li>
 
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="contacts">
+    <section class="contacts" id="contacts">
       <div class="container">
-        <h2 class="title title-margin">Контакты</h2>
+        <h2 class="title">Контакты</h2>
         <div class="contacts__wrapper">
           <address class="contacts__box">
             <div class="contacts__text">
@@ -301,7 +298,7 @@
             </ul>
           </address>
 
-          <form class="form" action="telegram.php" method="POST">
+          <form class="form">
             <div class="form__wrapper">
               <label class="form__label">
                 Ваше имя
@@ -319,9 +316,7 @@
               <textarea class="form__field form__field--textarea" placeholder="Текст вашего сообщения" maxlength="900"
                 name="message" required></textarea>
             </label>
-            <input class="form__file" type="file" name="file" />
             <button class="button" type="submit">Отправить</button>
-
           </form>
 
         </div>
@@ -330,9 +325,8 @@
   </main>
 
   <footer class="footer">
-    <a class="logo" href="##">
-      <img class="logo__img" src="images/logo.svg" alt="логотип" "width= " 159" height="52">
-      <span class="sr-only">Логотип</span>
+    <a class="logo" href="#">
+      <img class="logo__img" src="images/logo.svg" alt="логотип" "width= "159" height="52">
     </a>
   </footer>
 
