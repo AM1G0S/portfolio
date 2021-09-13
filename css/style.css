@@ -54,7 +54,7 @@ body {
 }
 
 .button {
-  padding: 12px 30px;
+  padding: 12px 26px;
   font-size: 18px;
   color: #ffffff;
   background-color: #2352de;
@@ -96,6 +96,7 @@ body {
 .animation:active {
   color: rgba(255, 255, 255, 0.7);
   box-shadow: none;
+  border: none;
 }
 /* </Анимации> */
 
@@ -103,10 +104,13 @@ body {
   padding: 140px 0;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .header {
   position: relative;
   z-index: 1;
-  padding-top: 75px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -115,8 +119,40 @@ body {
 
 .header__top {
   display: flex;
+  justify-content: center;
+  padding-top: 75px;
+}
+
+.header__wrapper {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1170px;
+  width: 100%;
+}
+
+.header__top--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 15px;
+  background-color: #7792e0;
+  z-index: 2;
+  animation-name: header__top--show;
+  animation-duration: 1s;
+}
+
+@keyframes header__top--show {
+  0% {
+    opacity: 0;
+    top: -70px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
 .header::after {
@@ -154,21 +190,27 @@ body {
 
 /* </Бургер> */
 .burger {
+  position: relative;
   display: none;
   z-index: 2;
   width: 44px;
   height: 44px;
-  align-items: center;
   transform: rotate(0deg);
   transition: 0.5s;
 }
 
+.burger:active {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .burger__line {
   position: absolute;
-  right: 7px;
+  left: 50%;
+  transform: translate(-50%, 0);
   display: block;
   height: 2px;
-  background: #fff;
+  background-color: #ffffff;
   width: 30px;
   opacity: 1;
   transition: transform 0.3s;
@@ -178,32 +220,25 @@ body {
   height: 0;
 }
 
-.burger__line:after {
+.burger__line:after,
+.burger__line::before {
   content: "";
   position: absolute;
   width: 30px;
   height: 2px;
   top: 10px;
   left: 0;
-  background-color: #fff;
+  background-color: #ffffff;
   transform-origin: left center;
   transition: transform 0.3s;
+}
+
+.burger__line::before {
+  top: -10px;
 }
 
 .burger--open .burger__line::after {
   transform: rotate(-45deg);
-}
-
-.burger__line::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  top: -10px;
-  left: 0;
-  background-color: #fff;
-  transform-origin: left center;
-  transition: transform 0.3s;
 }
 
 .burger--open .burger__line::before {
@@ -236,14 +271,14 @@ body {
   position: relative;
   padding-bottom: 34px;
   margin: 0 auto 30px;
-}
-
-.header__link span {
   font-weight: 600;
   font-size: 18px;
   color: inherit;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.5s;
+  transition: text-decoration-line 0.5s; /*чет не робит*/
+}
+
+.header__link:hover {
+  text-decoration-line: underline;
 }
 
 .header__link::before {
@@ -360,7 +395,7 @@ body {
   width: 60px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-image: url(https://dummyimage.com/60x60/2352DE/ffffff&text=error);
 }
 
@@ -412,13 +447,19 @@ body {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.6;
-  border-bottom: 2px solid transparent;
+  border: 2px solid transparent;
   transition: border-bottom 0.5s;
+}
+
+.portfolio__btn:focus {
+  outline: transparent;
+  border-radius: 3px;
+  border: 2px solid #91a9ef;
 }
 
 .portfolio__btn:hover {
   color: #2352de;
-  border-color: #2352de;
+  border-bottom: 2px solid #2352de;
 }
 
 .portfolio__content {
@@ -433,6 +474,10 @@ body {
 
 .mixitup-control-active {
   color: #2352de;
+}
+
+.mixitup-control-active:hover {
+  border-color: transparent;
 }
 
 /* Отзывы клиентов */
@@ -479,7 +524,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Ну попробуй тогда без него навести на блок с видео*/
   height: 400px;
   max-width: 570px;
   width: 100%;
@@ -520,8 +564,7 @@ body {
 }
 
 .reviews__video:active::after {
-  width: 51px;
-  height: 60px;
+  transform: scale(0.6);
 }
 /* Блок с результатами */
 
@@ -538,6 +581,7 @@ body {
   padding: 150px 0 50px;
   width: 280px;
   border: 1px solid #dbdbed;
+  background-color: #f6f6f8;
 }
 
 .results__item::before {
@@ -550,7 +594,7 @@ body {
   width: 90px;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center center;
+  background-position: center;
   background-image: url(https://dummyimage.com/60x60/2352DE/ffffff&text=error);
 }
 
@@ -618,8 +662,7 @@ body {
 .contacts__link {
   padding: 12px 0;
   color: #2352de;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom 0.5s;
+  transition: text-decoration-line 0.5s;
 }
 
 .contacts__link + .contacts__link {
@@ -630,11 +673,11 @@ body {
 .social__link:focus {
   outline-color: transparent;
   border-radius: 3px;
-  box-shadow: 0px 0px 0px 2px rgba(35, 82, 222, 0.5);
+  box-shadow: 0 0 0 2px rgba(35, 82, 222, 0.5);
 }
 
 .contacts__link:hover {
-  border-color: #2352de;
+  text-decoration-line: underline;
 }
 
 .contacts__link:active {
@@ -694,7 +737,7 @@ body {
   max-width: 255px;
   width: 100%;
   margin-top: 10px;
-  padding: 13px 0 13px 15px;
+  padding: 13px 15px;
   font-size: 14px;
   font-weight: 400;
   resize: vertical;
@@ -706,7 +749,7 @@ body {
 }
 
 .form__field:focus {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 3px solid #91a8ee;
 }
 
@@ -715,7 +758,7 @@ body {
 }
 
 .form__field:hover::placeholder {
-  color: #000;
+  color: #000000;
 }
 
 .form__field--textarea {
@@ -732,4 +775,48 @@ body {
   justify-content: center;
   padding: 50px 0;
   background-color: #343740;
+}
+
+/* Кнопка вверх */
+#arrow-top {
+  display: inline-block;
+  background-color: #2352de;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: 2px solid transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: background-color 0.3s, border 0.3s, opacity 0.5s, visibility 0.5s;
+  z-index: 4;
+}
+
+#arrow-top:hover {
+  background-color: #ffffff;
+  border: 2px solid #2352de;
+}
+
+#arrow-top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 44px;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+#arrow-top:hover::after {
+  color: #2352de;
+}
+
+#arrow-top.arrow-top--show {
+  opacity: 1;
+  visibility: visible;
 }

@@ -5,7 +5,7 @@
   }
 
   .skills__list {
-    max-width: calc(100% - 58%);
+    max-width: 42%;
   }
 
   .results__item {
@@ -20,18 +20,43 @@
   .portfolio__content {
     justify-content: center;
   }
+
+  .menu__item:not(:last-child) {
+    margin-right: 35px;
+  }
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1024px) {
   .title {
     display: block;
     font-size: 36px;
     margin: 0 auto 30px;
   }
 
+  .title::before {
+    height: 10px;
+    bottom: 4px;
+  }
+
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .header__top {
+    padding-top: 15px;
+  }
+
+  .header__top--fixed {
+    padding: 15px 15px;
+  }
+
+  .header__content {
+    height: calc(100vh - 68px);
+  }
+
   .header__title {
-    max-width: 828px;
+    max-width: 653px;
     font-size: 38px;
   }
 
@@ -39,13 +64,57 @@
     font-size: 74px;
   }
 
-  .menu {
-    font-size: 16px;
+  .logo {
+    z-index: 2;
   }
 
-  .skills__list {
-    max-width: 250px;
+  .menu {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    height: 100vh;
+    text-align: center;
+    padding: 90px 0;
+    background-color: #7792e0;
+    transform: translateY(-200%);
+    transition: transform 0.3s;
   }
+
+  .menu.menu--active {
+    transform: translateY(0%);
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  /* Бургер */
+
+  .burger {
+    display: block;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 22px 0;
+    font-size: 18px;
+    border-bottom: none;
+  }
+
+  .menu__link:focus {
+    background-color: rgba(35, 82, 222, 0.7);
+    box-shadow: none;
+  }
+
+  .menu__link:hover {
+    border-bottom: none;
+  }
+
+  /* навыки */
 
   .skills__item::before {
     height: 30px;
@@ -67,16 +136,23 @@
   }
 
   .results__list {
-    max-width: 680px;
+    max-width: 600px;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 15px;
   }
 
   .results__item {
     margin-bottom: 15px;
-    padding: 120px 0 25px;
+    padding: 120px 0 50px;
     width: 254px;
+  }
+
+  .results__item:nth-child(2n - 1){
+    margin-right: 15px;
+  }
+
+  .results__item::before {
+    width: 80px;
   }
 
   .results__text {
@@ -130,119 +206,17 @@
     height: 50px;
     width: 50px;
   }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width: 798px) {
-  .section-padding {
-    padding: 50px 0;
-  }
-
-  .title::before {
-    height: 10px;
-    bottom: 4px;
-  }
-
-  .padding-section {
-    padding: 50px 0;
-  }
-
-  .header {
-    padding-top: 15px;
-  }
-
-  .header__content {
-    height: calc(100vh - 68px);
-  }
-
-  .header__title {
-    font-size: 28px;
-  }
-
-  .header__text {
-    font-size: 58px;
-  }
-
-  .logo {
-    z-index: 2;
-  }
-
-  .menu {
-    position: absolute;
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    overflow: scroll;
-    height: 100vh;
-    text-align: center;
-    padding: 90px 0;
-    background-color: #7792e0;
-    transform: translateY(-200%);
-    transition: transform 0.3s;
-  }
-
-  .menu.menu--active {
-    transform: translateY(0%);
-  }
-
-  .menu__item:not(:last-child) {
-    margin-right: 0;
-  }
-
-  /* Бургер */
-
-  .burger {
-    display: block;
-  }
-
-  .menu__link {
-    display: block;
-    padding: 22px 0;
-    font-size: 18px;
-    border-bottom: none;
-  }
-
-  .menu__link:focus {
-    background-color: rgba(35, 82, 222, 0.7);
-    box-shadow: none;
-  }
-
-  .menu__link:hover {
-    border-bottom: none;
-  }
-
-  /* Услуги */
-
-  .services__item {
-    text-align: center;
-    padding-top: 60px;
-  }
-
-  .services__item::before {
-    left: 50%;
-    transform: translate(-50%, 0);
-    height: 50px;
-    width: 50px;
-  }
-
-  .services__title {
-    margin-bottom: 15px;
-    font-size: 18px;
-  }
-
-  .services__text {
-    max-width: 200px;
-  }
 
   /* Мои работы */
+  .container--portfolio {
+    max-width: 650px;
+  }
   .portfolio__list {
     flex-direction: column;
   }
 
   .portfolio__item:not(:last-child) {
-    margin: 0 0 15px;
+    margin: 0 0 4px;
   }
 
   .portfolio__btn {
@@ -267,12 +241,13 @@
   .reviews__video {
     position: absolute;
     top: 76px;
-    left: 54%;
+    left: 50%;
+    transform: translateX(24px);
     width: 70px;
     height: 70px;
     border-radius: 50%;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
   }
 
   .reviews__video::before {
@@ -282,12 +257,6 @@
   .reviews__video::after {
     width: 17px;
     height: 20px;
-  }
-
-  /* Результаты */
-
-  .results__item::before {
-    width: 80px;
   }
 
   /* Контакты */
@@ -307,11 +276,10 @@
 
   .form__wrapper {
     flex-direction: column;
-    margin-bottom: 30px;
   }
 
-  .form__label:not(:last-child) {
-    margin: 0 0 15px 0;
+  .form__label {
+    margin-bottom: 15px;
   }
 
   .form__field {
@@ -361,9 +329,11 @@
   }
 
   /* Услгуи */
+  .services__inner {
+    align-items: flex-start;
+  }
 
   .services__item {
-    text-align: left;
     padding-top: 60px;
     max-width: 100%;
   }
@@ -406,30 +376,40 @@
 
   /* Отзывы */
   .reviews__video {
-    position: absolute;
-    top: 88px;
-    left: 58%;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center bottom;
-  }
-  /* Результаты */
-  .results__item {
-    padding: 110px 0 25px;
-    width: 208px;
+    transform: translateX(24px);
   }
 
-  .results__item::before{
+  /* Результаты  */
+  .results__list {
+    max-width: 520px;
+  }
+
+  .results__item {
+    width: 165px;
+    padding: 67px 0px 25px;
+  }
+
+  .results__item::before {
     top: 20px;
-    width: 70px;
+    width: 42px;
+    height: 35px;
   }
 
   .results__text {
+    max-width: 135px;
+    text-align: center;
     font-size: 16px;
     margin-bottom: auto;
     padding-bottom: 10px;
+  }
+
+  .results__number {
+    font-size: 30px;
+  }
+
+  .results__item::before {
+    top: 20px;
+    width: 70px;
   }
 
   .results__number {
@@ -441,39 +421,19 @@
     padding-bottom: 50px;
   }
 
-  .form__label:not(:last-child) {
-    margin: 0 0 15px 0;
-  }
-}
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 480px) {
-  .header__text {
-    font-size: 40px;
+  .form__label,
+  .form__field--textarea {
+    margin-bottom: 15px;
   }
 
-  .skills__list {
-    max-width: 300px;
-  }
-  /* Результаты */
-  .results__item {
-    width: 165px;
-    padding: 68px 0px 25px;
-  } 
-
-  .results__item::before{
-    top: 20px;
-    width: 42px;
-    height: 35px;
+  #arrow-top {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
   }
 
-  .results__text{
-    max-width: 135px;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .results__number{
-    font-size: 30px;
+  #arrow-top::after {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
