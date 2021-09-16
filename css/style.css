@@ -109,60 +109,25 @@ body {
 }
 
 .header {
-  position: relative;
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  color: #ffffff;
-}
-
-.header__top {
-  display: flex;
-  justify-content: center;
-  padding-top: 75px;
-}
-
-.header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1170px;
-  width: 100%;
-}
-
-.header__top--fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 15px;
-  background-color: #7792e0;
   z-index: 2;
-  animation-name: header__top--show;
-  animation-duration: 1s;
+  padding-top: 75px;
+  color: #ffffff;
+  transition: padding 0.3s, background-color 0.3s;
 }
 
-@keyframes header__top--show {
-  0% {
-    opacity: 0;
-    top: -70px;
-  }
-
-  100% {
-    opacity: 1;
-    top: 0;
-  }
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(35, 82, 222, 0.5);
+.header--fixed {
+  padding: 15px 0;
+  background-color: rgba(119, 146, 224, 0.9);
 }
 
 .logo__img {
@@ -244,30 +209,49 @@ body {
 .burger--open .burger__line::before {
   transform: rotate(45deg);
 }
-
 /* </Бургер> */
 
-.header__content {
+/* Блок Hero */
+.hero {
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(35, 82, 222, 0.5);
+}
+
+.hero__content {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 128px);
+  height: 100vh;
   min-height: 450px;
 }
 
-.header__title {
+.hero__title {
   margin: auto 0;
   font-size: 48px;
   font-weight: 400;
 }
 
-.header__text {
+.hero__text {
   display: block;
   max-width: 1000px;
   font-size: 90px;
   font-weight: bold;
 }
 
-.header__link {
+.hero__link {
   position: relative;
   padding-bottom: 34px;
   margin: 0 auto 30px;
@@ -277,11 +261,11 @@ body {
   transition: text-decoration-line 0.5s; /*чет не робит*/
 }
 
-.header__link:hover {
+.hero__link:hover {
   text-decoration-line: underline;
 }
 
-.header__link::before {
+.hero__link::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -295,11 +279,11 @@ body {
   background-position: center;
 }
 
-.header__link:active::before {
+.hero__link:active::before {
   opacity: 0.7;
 }
 
-.header__link-icon {
+.hero__link-icon {
   padding-top: 10px;
 }
 
@@ -519,7 +503,7 @@ body {
   font-weight: 300;
 }
 
-.reviews__video {
+.video {
   position: relative;
   display: flex;
   align-items: center;
@@ -529,7 +513,7 @@ body {
   width: 100%;
 }
 
-.reviews__video::before {
+.video::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -538,18 +522,17 @@ body {
   transition: background-color 0.5s;
 }
 
-.reviews__video:hover::before {
+.video:hover::before {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.reviews__video:active::before {
+.video:active::before {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.reviews__video::after {
+.video::after {
   content: "";
   position: absolute;
-  z-index: 1;
   width: 100px;
   height: 86px;
   background-image: url(../images/play.svg);
@@ -559,11 +542,11 @@ body {
   transition: transform 0.5s;
 }
 
-.reviews__video:hover::after {
+.video:hover::after {
   transform: scale(1.2);
 }
 
-.reviews__video:active::after {
+.video:active::after {
   transform: scale(0.6);
 }
 /* Блок с результатами */
@@ -778,13 +761,13 @@ body {
 }
 
 /* Кнопка вверх */
-#arrow-top {
+.arrow-top {
   display: inline-block;
   background-color: #2352de;
   width: 50px;
   height: 50px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 50%;
   margin: 30px;
   position: fixed;
   bottom: 30px;
@@ -792,16 +775,21 @@ body {
   border: 2px solid transparent;
   opacity: 0;
   visibility: hidden;
-  transition: background-color 0.3s, border 0.3s, opacity 0.5s, visibility 0.5s;
-  z-index: 4;
+  transition: background-color 0.3s, border 0.3s, opacity 0.5s, visibility 0.5s, transform 0.4s;
+  z-index: 1;
 }
 
-#arrow-top:hover {
+.arrow-top:hover {
+  transform: scale(1.2);
   background-color: #ffffff;
   border: 2px solid #2352de;
 }
 
-#arrow-top::after {
+.arrow-top:active {
+  transform: scale(0.9);
+}
+
+.arrow-top::after {
   content: "\f077";
   font-family: FontAwesome;
   font-weight: normal;
@@ -812,11 +800,11 @@ body {
   transition: color 0.3s;
 }
 
-#arrow-top:hover::after {
+.arrow-top:hover::after {
   color: #2352de;
 }
 
-#arrow-top.arrow-top--show {
+.arrow-top--show {
   opacity: 1;
   visibility: visible;
 }

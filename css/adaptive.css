@@ -1,9 +1,5 @@
 /*==========  Desktop First  ========== */
 @media only screen and (max-width: 1200px) {
-  .header__content {
-    height: calc(100vh - 116px);
-  }
-
   .skills__list {
     max-width: 42%;
   }
@@ -43,24 +39,16 @@
     padding: 50px 0;
   }
 
-  .header__top {
+  .header {
     padding-top: 15px;
   }
 
-  .header__top--fixed {
-    padding: 15px 15px;
-  }
-
-  .header__content {
-    height: calc(100vh - 68px);
-  }
-
-  .header__title {
+  .hero__title {
     max-width: 653px;
     font-size: 38px;
   }
 
-  .header__text {
+  .hero__text {
     font-size: 74px;
   }
 
@@ -84,7 +72,7 @@
     transition: transform 0.3s;
   }
 
-  .menu.menu--active {
+  .menu--active {
     transform: translateY(0%);
   }
 
@@ -147,7 +135,7 @@
     width: 254px;
   }
 
-  .results__item:nth-child(2n - 1){
+  .results__item:nth-child(2n - 1) {
     margin-right: 15px;
   }
 
@@ -211,6 +199,7 @@
   .container--portfolio {
     max-width: 650px;
   }
+
   .portfolio__list {
     flex-direction: column;
   }
@@ -238,7 +227,7 @@
     font-size: 26px;
   }
 
-  .reviews__video {
+  .video {
     position: absolute;
     top: 76px;
     left: 50%;
@@ -250,11 +239,11 @@
     background-position: center;
   }
 
-  .reviews__video::before {
+  .video::before {
     border-radius: 50%;
   }
 
-  .reviews__video::after {
+  .video::after {
     width: 17px;
     height: 20px;
   }
@@ -297,23 +286,19 @@
     font-size: 28px;
   }
 
-  .header__content {
-    height: calc(100vh - 59px);
-  }
-
-  .header__title {
+  .hero__title {
     font-size: 20px;
   }
 
-  .header__text {
+  .hero__text {
     font-size: 46px;
   }
 
-  .header__link {
+  .hero__link {
     margin: 0px auto 16px;
     font-size: 14px;
   }
-  .header__link::before {
+  .hero__link::before {
     width: 37px;
     height: 21px;
   }
@@ -375,7 +360,7 @@
   }
 
   /* Отзывы */
-  .reviews__video {
+  .video {
     transform: translateX(24px);
   }
 
@@ -435,5 +420,37 @@
   #arrow-top::after {
     font-size: 24px;
     line-height: 32px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .hero__title {
+    font-size: 19px;
+  }
+
+  .hero__text {
+    font-size: 43px;
+  }
+
+  .portfolio__box {
+    max-width: 131px;
+  }
+
+  .results__item {
+    width: 140px;
+    padding: 62px 0px 14px;
+    margin-bottom: 10px;
+  }
+
+  .results__item:nth-child(2n - 1) {
+    margin-right: 10px;
+  }
+
+  .results__item::before {
+    top: 15px;
+  }
+
+  .results__number {
+    font-size: 32px;
   }
 }

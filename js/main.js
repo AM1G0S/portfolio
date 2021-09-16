@@ -1,6 +1,6 @@
 $(function () {
 
-  $(".menu, .header__content, .footer").on("click", "a", function (event) {
+  $(".menu, .hero__content, .footer, .header__inner").on("click", "a", function (event) {
     event.preventDefault();
     var id = $(this).attr('href'),
       top = $(id).offset().top;
@@ -22,12 +22,12 @@ $(function () {
 
 
   // Липкий хедер
-  var header = $('.header__top');
+  var header = $('.header');
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 140) {
-      header.addClass('header__top--fixed');
+    if ($(window).scrollTop() > 70) {
+      header.addClass('header--fixed');
     } else {
-      header.removeClass('header__top--fixed');
+      header.removeClass('header--fixed');
     }
   });
   // </Липкий хедер>
@@ -35,15 +35,11 @@ $(function () {
   // Кнопка вверх
   var btn = $('#arrow-top');
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 700) {
+    if ($(window).scrollTop() > 800) {
       btn.addClass('arrow-top--show');
     } else {
       btn.removeClass('arrow-top--show');
     }
-  });
-  btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, '300');
   });
   // </Кнопка вверх>
 

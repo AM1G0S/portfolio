@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Дзязиков Сулейман Портфолио | Главная страница</title>
-  <link rel="icon" href="images/favicon.ico" />
+  <link rel="icon" href="images/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -18,55 +18,58 @@
 </head>
 
 <body id="body">
-  <header class="header" style="background-image: url(images/bg.jpg)">
+  <header class="header">
     <div class="container">
-      <nav class="header__top">
-        <div class="header__wrapper">
-          <a class="logo" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="логотип" width="159" height="53">
-          </a>
-
-          <button class="burger" type="button">
-            <span class="burger__line"></span>
-            <span class="sr-only">открыть меню</span>
-          </button>
-
-          <ul class="menu">
-            <li class="menu__item">
-              <a class="menu__link animation" href="#about">Обо мне</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link animation" href="#skills">Навыки</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link animation" href="#services">Услуги</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link animation" href="#portfolio">Портфолио</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link animation" href="#reviews">Отзывы</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link animation" href="#contacts">Контакты</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <div class="header__content">
-        <h1 class="header__title">
-          Привет, я Дзязиков Сулейман
-          <span class="header__text">frontend- разработчик</span>
-        </h1>
-        <a class="header__link animation" href="#portfolio">
-          cмотреть работы
+      <nav class="header__inner">
+        <a class="logo" href="#body">
+          <img class="logo__img" src="images/logo.svg" alt="логотип" width="159" height="53">
         </a>
-      </div>
+
+        <button class="burger" type="button">
+          <span class="burger__line"></span>
+          <span class="sr-only">открыть меню</span>
+        </button>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link animation" href="#about">Обо мне</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#skills">Навыки</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#services">Услуги</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#portfolio">Портфолио</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#reviews">Отзывы</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link animation" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main class="main">
+    
+    <section class="hero" style="background-image: url(images/bg.jpg)">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Привет, я Дзязиков Сулейман
+            <span class="hero__text">frontend- разработчик</span>
+          </h1>
+          <a class="hero__link animation" href="#portfolio">
+            cмотреть работы
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="about section-padding" id="about">
       <div class="container">
         <h2 class="title">Обо мне</h2>
@@ -231,7 +234,7 @@
             </blockquote>
           </div>
 
-          <a class="reviews__video" style="background-image: url(images/video_bg.jpg);" data-fancybox="video-gallery"
+          <a class="video" style="background-image: url(images/video_bg.jpg);" data-fancybox="video-gallery"
             data-src="https://youtu.be/ZTlHnk_U7mQ" href="#">
             <span class="sr-only">смотреть видео</span>
           </a>
@@ -240,7 +243,7 @@
       </div>
     </section>
 
-    <section class="results section-padding" id="results">
+    <div class="results section-padding" id="results">
       <div class="container">
         <div class="results__inner">
           <ul class="results__list">
@@ -268,7 +271,7 @@
           </ul>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="contacts" id="contacts">
       <div class="container">
@@ -343,9 +346,9 @@
     <a class="logo" href="#body">
       <img class="logo__img" src="images/logo.svg" alt="логотип" width="159" height="52">
     </a>
+    <a class="arrow-top" id="arrow-top" href="#body"></a>
   </footer>
 
-  <a id="arrow-top" href="#body"></a>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
